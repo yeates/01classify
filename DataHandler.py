@@ -62,14 +62,14 @@ class DataInputer:
 
     def clear_useless_words(self, row, flag):
         # delete operations
-        for str in operations:
+        for str in OPERATIONS:
             self.delete_str(row, str, flag)
         # delete illegal symbol
-        for str in illegal_symbol:
+        for str in ILLEGAL_SYMBOL:
             self.delete_str(row, str, flag)
         # delete by regular expression
         strs0 = []
-        for reg in all_regs:
+        for reg in ALL_REGS:
             strs0 = self.find_str_by_reg(reg, row, flag)
         for str in strs0:
             self.delete_str(row, str, flag)
